@@ -52,26 +52,49 @@ static __inline int mul(int x,int y) {
 	return result;
 }
 
-static __inline int div(int x,int a) {
+static __inline int div(int x,int y) {
 //
 // 以下を削除してここに除算のロジックを入れてください。x=32bit , y=32bit, result=32bit
-	uint64_t y = a;
-	uint32_t result = 0;
-	uint64_t n = (uint64_t)1<<32;
+	
+	int32_t result = 0;
+	int32_t n = 1;
 
-	// while (y<=x) {//yがxより大きくなるまでyを左シフト
-		y = y<<32;
-		// n <<= 1;
-	// }
-	// while (1 < n) {
-	for(int i=0;i<32;i++){
-		y >>= 1;
-		n >>= 1;
-		if (x>=y) {
-			x-=y;
-			result|=n;
-		}
+	while (y<=x) {//yがxより大きくなるまでyを左シフト
+		y <<= 1;
+		n <<= 1;
 	}
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
+	y>>=1;n>>=1; if(x>=y){x-=y;result|=n;} if(1>=n)return result;
 	return result;
 }
 
