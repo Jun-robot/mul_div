@@ -55,8 +55,23 @@ static __inline int mul(int x,int y) {
 static __inline int div(int x,int y) {
 //
 // 以下を削除してここに除算のロジックを入れてください。x=32bit , y=32bit, result=32bit
-//
-	return x/y;
+	
+	int32_t result = 0;
+	int32_t n = 1;
+
+	while (y<=x) {//yがxより大きくなるまでyを左シフト
+		y <<= 1;
+		n <<= 1;
+	}
+	while (1 < n) {
+		y >>= 1;
+		n >>= 1;
+		if (x>=y) {
+			x-=y;
+			result|=n;
+		}
+	}
+	return result;
 }
 
 void alarm_mul(int signum){
