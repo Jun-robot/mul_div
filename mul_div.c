@@ -15,12 +15,20 @@ static __inline int mul(int x,int y) {
 // 以下を削除してここに乗算のロジックを入れてください。x=32bit , y=32bit, result=64bit
 //
 	uint64_t result=0;
-	while(y!=0){
-		if(y&0x1){
-			result += x;
+	//x,yを一回ずつビットシフトしておくパターン
+	// while(y!=0){
+	// if(y&0x1){
+	// 	result += x;
+	// }
+	// x <<= 1;
+	// y >>= 1;
+	// }
+
+	//x,yを毎回ビットシフトするパターン
+	for(int i=0; i<32; i++){
+		if(y>>i & 0x1){
+			result += (x<<i);
 		}
-		x <<= 1;
-		y >>= 1;
 	}
 	return result;
 }
