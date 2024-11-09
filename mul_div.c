@@ -16,19 +16,9 @@ static __inline int mul(int x,int y) {
 //
 	uint64_t result=0;
 	//x,yを一回ずつビットシフトしておくパターン
-	// while(y!=0){
-	// if(y&0x1){
-	// 	result += x;
-	// }
-	// x <<= 1;
-	// y >>= 1;
-	// }
-
-	//x,yを毎回ビットシフトするパターン
-	for(int i=0; i<32; i++){
-		if(y>>i & 0x1){
-			result += (x<<i);
-		}
+	
+	while(y!=0){
+		if(y&0x1)result+=x;x<<=1;y>>=1;
 	}
 	return result;
 }
