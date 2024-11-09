@@ -15,7 +15,7 @@ static __inline int mul(int x,int y) {
 // 以下を削除してここに乗算のロジックを入れてください。x=32bit , y=32bit, result=64bit
 //
 	uint64_t result=0;
-	for(int i=0; i<32; i++){
+	while(y!=0){
 		if(y&0x1){
 			result += x;
 		}
